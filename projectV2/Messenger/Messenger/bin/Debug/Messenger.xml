@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Messenger</name>
+    </assembly>
+    <members>
+        <member name="T:Messenger.App">
+            <summary>
+            Логика взаимодействия для App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:Messenger.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Messenger.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:Messenger.Data.DataModels.Chat">
+            <summary>
+            DataBase table chat
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Admin.Pages.MessageToAll">
+            <summary>
+            Логика взаимодействия для MessageToAll.xaml
+            </summary>
+            <summary>
+            MessageToAll
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Admin.Pages.MessageToAll.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Admin.Pages.Search">
+            <summary>
+            Логика взаимодействия для Search.xaml
+            </summary>
+            <summary>
+            Search
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Admin.Pages.Search.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Admin.Windows.AdminWindow">
+            <summary>
+            Логика взаимодействия для AdminWindow.xaml
+            </summary>
+            <summary>
+            AdminWindow
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Admin.Windows.AdminWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Login.UserControls.EmailVerificationUC">
+            <summary>
+            Логика взаимодействия для EmailVerificationUC.xaml
+            </summary>
+            <summary>
+            EmailVerificationUC
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Login.UserControls.EmailVerificationUC.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Login.UserControls.LoginUC">
+            <summary>
+            Логика взаимодействия для LoginUC.xaml
+            </summary>
+            <summary>
+            LoginUC
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Login.UserControls.LoginUC.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Login.UserControls.NewPasswordUC">
+            <summary>
+            Логика взаимодействия для NewPasswordUC.xaml
+            </summary>
+            <summary>
+            NewPasswordUC
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Login.UserControls.NewPasswordUC.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Login.UserControls.RegistrationUC">
+            <summary>
+            Логика взаимодействия для RegistrationUC.xaml
+            </summary>
+            <summary>
+            RegistrationUC
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Login.UserControls.RegistrationUC.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Login.Windows.NewPassword">
+            <summary>
+            Логика взаимодействия для NewPassword.xaml
+            </summary>
+            <summary>
+            NewPassword
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Login.Windows.NewPassword.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Login.Windows.Sign">
+            <summary>
+            Логика взаимодействия для Sign.xaml
+            </summary>
+            <summary>
+            Sign
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Login.Windows.Sign.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.Pages.AboutPage">
+            <summary>
+            Логика взаимодействия для AboutPage.xaml
+            </summary>
+            <summary>
+            AboutPage
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.Pages.AboutPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.Pages.AccountPage">
+            <summary>
+            Логика взаимодействия для AccountPage.xaml
+            </summary>
+            <summary>
+            AccountPage
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.Pages.AccountPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.Pages.ChangePage">
+            <summary>
+            Логика взаимодействия для ChangePage.xaml
+            </summary>
+            <summary>
+            ChangePage
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.Pages.ChangePage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.Pages.ChatPage">
+            <summary>
+            Логика взаимодействия для ChatPage.xaml
+            </summary>
+            <summary>
+            ChatPage
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.Pages.ChatPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.Pages.DevicePage">
+            <summary>
+            Логика взаимодействия для DevicePage.xaml
+            </summary>
+            <summary>
+            DevicePage
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.Pages.DevicePage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.Pages.GroupChatPage">
+            <summary>
+            Логика взаимодействия для GroupChatPage.xaml
+            </summary>
+            <summary>
+            GroupChatPage
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.Pages.GroupChatPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.Pages.SearchPage">
+            <summary>
+            Логика взаимодействия для SearchPage.xaml
+            </summary>
+            <summary>
+            SearchPage
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.Pages.SearchPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.UserControls.ChatLookUC">
+            <summary>
+            Логика взаимодействия для ChatOrUserLookUC.xaml
+            </summary>
+            <summary>
+            ChatLookUC
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.UserControls.ChatLookUC.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.UserControls.DeviceUC">
+            <summary>
+            Логика взаимодействия для DeviceUC.xaml
+            </summary>
+            <summary>
+            DeviceUC
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.UserControls.DeviceUC.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.UserControls.MessageUC">
+            <summary>
+            Логика взаимодействия для MessageUC.xaml
+            </summary>
+            <summary>
+            MessageUC
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.UserControls.MessageUC.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.UserControls.UserViewUC">
+            <summary>
+            Логика взаимодействия для UserViewUC.xaml
+            </summary>
+            <summary>
+            UserViewUC
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.UserControls.UserViewUC.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.Windows.Main">
+            <summary>
+            Логика взаимодействия для Account.xaml
+            </summary>
+            <summary>
+            Main
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.Windows.Main.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.Windows.UserInfoWindow">
+            <summary>
+            Логика взаимодействия для UserInfoWindow.xaml
+            </summary>
+            <summary>
+            UserInfoWindow
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.Windows.UserInfoWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Presentation.View.Main.Windows.WindowForChat">
+            <summary>
+            Логика взаимодействия для WindowForChat.xaml
+            </summary>
+            <summary>
+            WindowForChat
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.Windows.WindowForChat.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Messenger.Properties.Resources">
+            <summary>
+              Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+            </summary>
+        </member>
+        <member name="P:Messenger.Properties.Resources.ResourceManager">
+            <summary>
+              Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+            </summary>
+        </member>
+        <member name="P:Messenger.Properties.Resources.Culture">
+            <summary>
+              Перезаписывает свойство CurrentUICulture текущего потока для всех
+              обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+            </summary>
+        </member>
+        <member name="P:Messenger.Properties.Resources.cat2">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Messenger.Properties.Resources.cat2_v2">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Messenger.Properties.Resources.GifForAbout">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Messenger.Properties.Resources.left_arrow">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Messenger.Properties.Resources.left_arrow_mouse_on">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Messenger.Properties.Resources.magnifying_glass">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Messenger.Properties.Resources.magnifying_glass_mouse">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Messenger.Properties.Resources.MessageIcon">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>

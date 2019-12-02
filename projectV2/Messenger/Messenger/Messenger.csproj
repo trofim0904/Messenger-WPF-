@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F60848BF-7F08-4F80-852E-52C84B3D52F1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Messenger</RootNamespace>
+    <AssemblyName>Messenger</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <DocumentationFile>bin\Debug\Messenger.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>messageicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=1.4.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.1.4.18\lib\net\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Presentation\View\Admin\Pages\MessageToAll.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Admin\Pages\Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Admin\Windows\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Login\UserControls\EmailVerificationUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Login\UserControls\LoginUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Login\UserControls\NewPasswordUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Login\UserControls\RegistrationUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Login\Windows\NewPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Login\Windows\Sign.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\Pages\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\Pages\AccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\Pages\ChangePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\Pages\ChatPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\Pages\DevicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\Pages\GroupChatPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\Pages\SearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\UserControls\ChatLookUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\UserControls\DeviceUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\UserControls\MessageUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\UserControls\UserViewUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\Windows\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\Windows\UserInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\View\Main\Windows\WindowForChat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\DataModels\Chat.cs" />
+    <Compile Include="Data\DataModels\Device.cs" />
+    <Compile Include="Data\DataModels\Message.cs" />
+    <Compile Include="Data\DataModels\MessageInChat.cs" />
+    <Compile Include="Data\DataModels\User.cs" />
+    <Compile Include="Data\DataModels\UserDevice.cs" />
+    <Compile Include="Data\DataModels\UserInChat.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\GenericRepository.cs" />
+    <Compile Include="Data\MessangerContext.cs" />
+    <Compile Include="Data\ModelRepository\ChatRepository\ChatRepository.cs" />
+    <Compile Include="Data\ModelRepository\ChatRepository\IChatRepository.cs" />
+    <Compile Include="Data\ModelRepository\DeviceRepository\DeviceRepository.cs" />
+    <Compile Include="Data\ModelRepository\DeviceRepository\IDeviceRepository.cs" />
+    <Compile Include="Data\ModelRepository\UserRepository\IUserRepository.cs" />
+    <Compile Include="Data\ModelRepository\UserRepository\UserRepository.cs" />
+    <Compile Include="Logic\Models\AccountModel.cs" />
+    <Compile Include="Logic\Models\ChangeModel.cs" />
+    <Compile Include="Logic\Models\ChatModel.cs" />
+    <Compile Include="Logic\Models\DeviceModel.cs" />
+    <Compile Include="Logic\Models\GroupChatModel.cs" />
+    <Compile Include="Logic\Models\LoginModel.cs" />
+    <Compile Include="Logic\Models\MessageModel.cs" />
+    <Compile Include="Logic\Models\RegistrationModel.cs" />
+    <Compile Include="Logic\ProcessingLogic\AccountLogic\ChangeAccLogic.cs" />
+    <Compile Include="Logic\ProcessingLogic\AccountLogic\IChangeAccLogic.cs" />
+    <Compile Include="Logic\ProcessingLogic\AccountLogic\IInfoLogic.cs" />
+    <Compile Include="Logic\ProcessingLogic\AccountLogic\InfoLogic.cs" />
+    <Compile Include="Logic\ProcessingLogic\ChatLogic\ChatLogic.cs" />
+    <Compile Include="Logic\ProcessingLogic\ChatLogic\IChattingLogic.cs" />
+    <Compile Include="Logic\ProcessingLogic\ChatLogic\IGroupChat.cs" />
+    <Compile Include="Logic\ProcessingLogic\ChatLogic\ISoloChat.cs" />
+    <Compile Include="Logic\ProcessingLogic\DeviceLogic\DeviceLogic.cs" />
+    <Compile Include="Logic\ProcessingLogic\DeviceLogic\IDeviceLogic.cs" />
+    <Compile Include="Logic\ProcessingLogic\SearchLogic\ISearchLogic.cs" />
+    <Compile Include="Logic\ProcessingLogic\SearchLogic\SearchLogic.cs" />
+    <Compile Include="Logic\ProcessingLogic\SignLogic\ILogin.cs" />
+    <Compile Include="Logic\ProcessingLogic\SignLogic\IRegistration.cs" />
+    <Compile Include="Logic\ProcessingLogic\SignLogic\Login.cs" />
+    <Compile Include="Logic\ProcessingLogic\SignLogic\Registration.cs" />
+    <Compile Include="Logic\ViewModel\AdminVM\AdminWindowVM.cs" />
+    <Compile Include="Logic\ViewModel\BaseVM.cs" />
+    <Compile Include="Logic\ViewModel\DelegateCommand.cs" />
+    <Compile Include="Logic\ViewModel\LoginVM\LoginVM.cs" />
+    <Compile Include="Logic\ViewModel\LoginVM\NewPasswordVM.cs" />
+    <Compile Include="Logic\ViewModel\LoginVM\RegistrationVM.cs" />
+    <Compile Include="Logic\ViewModel\LoginVM\SignVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\AccountVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\ChangeVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\ChattingVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\GroupChatPageVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\GroupChatVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\MessageVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\SearchVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\SoloChatPageVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\DeviceVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\MainVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\SoloChatVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\UserInfoVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\UserViewVM.cs" />
+    <Compile Include="Migrations\201911241527537_InitialCreate.cs" />
+    <Compile Include="Migrations\201911241527537_InitialCreate.designer.cs">
+      <DependentUpon>201911241527537_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911261755066_MigrationAddFields.cs" />
+    <Compile Include="Migrations\201911261755066_MigrationAddFields.designer.cs">
+      <DependentUpon>201911261755066_MigrationAddFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911281439319_MakeNullable.cs" />
+    <Compile Include="Migrations\201911281439319_MakeNullable.designer.cs">
+      <DependentUpon>201911281439319_MakeNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911281613557_AddToChatTable.cs" />
+    <Compile Include="Migrations\201911281613557_AddToChatTable.designer.cs">
+      <DependentUpon>201911281613557_AddToChatTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MyUser.cs" />
+    <Compile Include="Presentation\View\Admin\Pages\MessageToAll.xaml.cs">
+      <DependentUpon>MessageToAll.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Admin\Pages\Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Admin\Windows\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Login\UserControls\EmailVerificationUC.xaml.cs">
+      <DependentUpon>EmailVerificationUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Login\UserControls\LoginUC.xaml.cs">
+      <DependentUpon>LoginUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Login\UserControls\NewPasswordUC.xaml.cs">
+      <DependentUpon>NewPasswordUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Login\UserControls\RegistrationUC.xaml.cs">
+      <DependentUpon>RegistrationUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Login\Windows\NewPassword.xaml.cs">
+      <DependentUpon>NewPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Login\Windows\Sign.xaml.cs">
+      <DependentUpon>Sign.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\Pages\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\Pages\AccountPage.xaml.cs">
+      <DependentUpon>AccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\Pages\ChangePage.xaml.cs">
+      <DependentUpon>ChangePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\Pages\ChatPage.xaml.cs">
+      <DependentUpon>ChatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\Pages\DevicePage.xaml.cs">
+      <DependentUpon>DevicePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\Pages\GroupChatPage.xaml.cs">
+      <DependentUpon>GroupChatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\Pages\SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\UserControls\ChatLookUC.xaml.cs">
+      <DependentUpon>ChatLookUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\UserControls\DeviceUC.xaml.cs">
+      <DependentUpon>DeviceUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\UserControls\MessageUC.xaml.cs">
+      <DependentUpon>MessageUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\UserControls\UserViewUC.xaml.cs">
+      <DependentUpon>UserViewUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\Windows\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\Windows\UserInfoWindow.xaml.cs">
+      <DependentUpon>UserInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\Main\Windows\WindowForChat.xaml.cs">
+      <DependentUpon>WindowForChat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Migrations\201911241527537_InitialCreate.resx">
+      <DependentUpon>201911241527537_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911261755066_MigrationAddFields.resx">
+      <DependentUpon>201911261755066_MigrationAddFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911281439319_MakeNullable.resx">
+      <DependentUpon>201911281439319_MakeNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911281613557_AddToChatTable.resx">
+      <DependentUpon>201911281613557_AddToChatTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentation\View\Admin\UserControls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cat2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cat2_v2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\left_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\left_arrow_mouse_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\magnifying_glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\magnifying_glass_mouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GifForAbout.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MessageIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="messageicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+</Project>

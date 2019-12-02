@@ -1,0 +1,58 @@
+﻿<Window x:Class="Messenger.Presentation.View.Admin.Windows.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Messenger.Presentation.View.Admin.Windows"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="menu_btn">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="0 0 4 0"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#2980b9">
+
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="White">ADMIN PAGE</TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#3498db">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button x:Name="_searchPageBtn" 
+                        Style="{StaticResource menu_btn}" 
+                        Width="100"
+                        Command="{Binding Path=GoToSearchCommand}">Find user</Button>
+                <Button x:Name="_mesPageBtn" 
+                        Style="{StaticResource menu_btn}" 
+                        Width="240"
+                        Command="{Binding Path=GoToMessageCommand}">Send message to all users</Button>
+                <Button Style="{StaticResource menu_btn}" 
+                        Width="150"
+                        Command="{Binding Path=ExitCommand}">Back to login</Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="73*"/>
+                <ColumnDefinition Width="325*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Content="{Binding Path=AdminContent}" 
+                   Grid.ColumnSpan="2" 
+                   Margin="0,0,0,0" 
+                   NavigationUIVisibility="Hidden"/>
+        </Grid>
+
+    </Grid>
+</Window>
