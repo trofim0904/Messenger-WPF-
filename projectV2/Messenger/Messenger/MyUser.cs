@@ -1,4 +1,5 @@
 ﻿using Messenger.Data.DataModels;
+using Messenger.Logic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,8 @@ namespace Messenger
 {
     public class MyUser
     {
-        public readonly static User User = new User();
+        
+        public readonly static UserModel User = new UserModel();
         //{
         //    UserId = 1,
         //    UserEmail = "default@",
@@ -19,7 +21,7 @@ namespace Messenger
         //    UserPhoneNumber = "380000000000",
         //    UserRole = "user"
         //};
-        public static void SetNewUser(User user)
+        public static void SetNewUser(UserModel user)
         {
             User.UserEmail = user.UserEmail;
             User.UserId = user.UserId;
@@ -28,6 +30,7 @@ namespace Messenger
             User.UserPassword = user.UserPassword;
             User.UserPhoneNumber = user.UserPhoneNumber;
             User.UserRole = user.UserRole;
+            User.UserToken = user.UserToken;
         }
         
     }

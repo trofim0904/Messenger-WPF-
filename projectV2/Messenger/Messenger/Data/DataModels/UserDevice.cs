@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Messenger.Data.DataModels
 {
+    /// <summary>
+    /// Isolation table
+    /// </summary>
     public class UserDevice
     {
         [Key]

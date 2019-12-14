@@ -19,6 +19,9 @@ namespace Messenger.Presentation.View.Main.Windows
     /// </summary>
     public partial class UserInfoWindow : Window
     {
+        /// <summary>
+        /// ctor
+        /// </summary>
         public UserInfoWindow()
         {
             InitializeComponent();

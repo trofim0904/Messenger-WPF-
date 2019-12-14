@@ -31,9 +31,12 @@ namespace Messenger.Logic.ViewModel.MainVM
         }
         private void OpenChat(object obj)
         {
-            Window window = new WindowForChat();
+            Window window = new WindowForChat
+            {
+                Owner = Application.Current.Windows[0]
+            };
             ChattingVM chattingVM = new ChattingVM(window, Chat);
-            //chattingVM.ChatModel = Chat;////////////////////////////////////////////////////////////
+            
             window.DataContext = chattingVM;
             window.Show();
         }

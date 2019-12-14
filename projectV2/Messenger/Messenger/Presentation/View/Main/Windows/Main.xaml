@@ -4,10 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Messenger.Presentation.View.Main.Windows"
+        xmlns:vm ="clr-namespace:Messenger.Logic.ViewModel.MainVM"
         mc:Ignorable="d"
+        x:Name="MainWindow"
         WindowStartupLocation="CenterScreen"
         Title="Account" Height="450" Width="800">
 
+    <Window.DataContext>
+        <vm:MainVM/>
+    </Window.DataContext>
     <Window.Resources>
         <Style TargetType="Button" x:Key="base">
             <Setter Property="FontSize"  Value="15"/>
@@ -35,6 +40,9 @@
                 <Button x:Name="_menuGroupChatBtn" Content="Group chats"  Style="{StaticResource Menu_button}" Command="{Binding Path=GroupChatPageCommand}"/>
                 <Button x:Name="_menuIpBtn" Content="Device ip" Style="{StaticResource Menu_button}" Command="{Binding Path=DevicePageCommand}"/>
                 <Button x:Name="_menuSearchBtn" Content="Search"  Style="{StaticResource Menu_button}" Command="{Binding Path=SearchPageCommand}"/>
+                <Button Content="Refresh data"  
+                        Style="{StaticResource Menu_button}" 
+                        Command="{Binding Path=RefreshCommand}"/>
                
 
             </StackPanel>

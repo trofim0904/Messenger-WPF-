@@ -1,48 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Media.Imaging;
-using Messenger.Data.DataModels;
-using Messenger.Data.ModelRepository.ChatRepository;
-using Messenger.Data.ModelRepository.UserRepository;
 using Messenger.Logic.Models;
 using Messenger.Logic.ViewModel.MainVM;
+using Messenger.Mapping;
+using Messenger.MessangerService;
 using Messenger.Presentation.View.Main.UserControls;
+using Messenger.Services;
 
 namespace Messenger.Logic.ProcessingLogic.ChatLogic
 {
     public class ChatLogic : ISoloChat, IGroupChat, IChattingLogic
     {
-        public IEnumerable<ChatLookUC> GetGroupChatUC(User user)
+        public IEnumerable<ChatLookUC> GetGroupChatUC(string token)
         {
             List<ChatLookUC> groupChatUCs = new List<ChatLookUC>();
-            IEnumerable<Chat> groupChats;
+            
+            IService service = new WCFService();
+            IEnumerable<GroupChatDTO> groupChats = service.GetGroupChat(token);
 
-            using (ChatRepository repository = new ChatRepository())
-            {
-                groupChats = repository.GetGroupChats(user);
-            }
             if (groupChats != null)
             {
-                foreach (Chat chat in groupChats)
+                foreach (GroupChatDTO chat in groupChats)
                 {
                     ChatLookUC groupChatUC = new ChatLookUC();
                     GroupChatVM groupChatVM = new GroupChatVM();
-
-                    groupChatVM.Chat.Id = chat.ChatId;
-                    groupChatVM.Chat.Img = chat.ChatImg;
-                    groupChatVM.Chat.Name = chat.ChatName;
-                    groupChatVM.Chat.Status = chat.ChatStatus + " users";
+                    groupChatVM.Chat.Id = chat.Id;
+                    groupChatVM.Chat.Img = chat.Img;
+                    groupChatVM.Chat.Name = chat.Name;
+                    groupChatVM.Chat.Status = chat.Status + " users";
                     groupChatVM.Chat.ChatAdminId = chat.ChatAdminId;
-
                     groupChatUC.DataContext = groupChatVM;
-
-                    //soloChatUC._imgMain.Source = new BitmapImage(new Uri(chat.ChatImg, UriKind.Absolute));
-                    //soloChatUC._nameTb.Text = chat.ChatName;
-                    //soloChatUC._statusTb.Text = chat.ChatStatus;
 
                     groupChatUCs.Add(groupChatUC);
 
@@ -55,28 +42,22 @@ namespace Messenger.Logic.ProcessingLogic.ChatLogic
         public IEnumerable<MessageUC> GetMessages(ChatModel chatModel)
         {
             List<MessageUC> messageUCs = new List<MessageUC>();
-            IEnumerable<Message> messages;
+            IService service = new WCFService();
+            IChatMap chatMap = new Map();
+            IEnumerable<MessageDTO> messageDTOs = service.GetMessages(chatMap.ChatModelToChatDTO(chatModel));
 
-            using (ChatRepository repository = new ChatRepository())
+            if (messageDTOs != null)
             {
-                messages = repository.GetMessages(chatModel);
-            }
-            if (messages != null)
-            {
-                foreach (Message mess in messages)
+                foreach (MessageDTO mess in messageDTOs)
                 {
                     MessageUC messageUC = new MessageUC();
                     MessageVM messageVM = new MessageVM();
+                    messageVM.Message.Id = mess.Id;
+                    messageVM.Message.Text = mess.Text;
+                    messageVM.Message.Time = mess.Time;
+                    messageVM.Message.Author = mess.Author;
+                    messageVM.Message.Img = mess.Img;
 
-                    messageVM.Message.Id = mess.MesId;
-                    messageVM.Message.Text = mess.MesText;
-                    messageVM.Message.Time = mess.MesTime;
-                    using (UserRepository repository = new UserRepository())
-                    {
-                        User user = repository.GetItem(mess.MesUserId);
-                        messageVM.Message.Author = user.UserLogin;
-                        messageVM.Message.Img = user.UserImg;
-                    }
                     messageUC.DataContext = messageVM;
                     messageUCs.Add(messageUC);
 
@@ -86,48 +67,38 @@ namespace Messenger.Logic.ProcessingLogic.ChatLogic
             return messageUCs;
         }
 
-        public ChatModel GetOrCreateChat(AccountModel user)
+        public ChatModel GetOrCreateChat(AccountModel user, string token)
         {
-            ChatModel chatModel = new ChatModel();
-            Chat chat = new Chat();
-            using(ChatRepository repository = new ChatRepository())
-            {
-                chat = repository.FindSoloChatByUser(user);
-                chatModel.Id = chat.ChatId;
-                chatModel.Img = chat.ChatImg;
-                chatModel.Name = chat.ChatName;
-                chatModel.Status = chat.ChatStatus;
-
-                repository.Save();
-            }
+            IUserMap userMap = new Map();
+            IChatMap chatMap = new Map();
+            IService service = new WCFService();
+            return chatMap.ChatDTOToChatModel(service.GetOrCreateChat(userMap.AccountModelToAccountDTO(user), token));
             
-            return chatModel;
         }
 
-        public IEnumerable<ChatLookUC> GetSoloChatUC(User user)
+      
+
+        public IEnumerable<ChatLookUC> GetSoloChatUC(string token)
         {
             List<ChatLookUC> soloChatUCs = new List<ChatLookUC>();
-            IEnumerable<Chat> soloChats;
+            IService service = new WCFService();
+            IEnumerable<ChatDTO> chatDTOs = service.GetChats(token);
 
-            using (ChatRepository repository = new ChatRepository())
+            if (chatDTOs != null)
             {
-                soloChats = repository.GetSoloChats(user);
-            }
-            if (soloChats != null)
-            {
-                foreach (Chat chat in soloChats)
+                foreach (ChatDTO chat in chatDTOs)
                 {
                     ChatLookUC soloChatUC = new ChatLookUC();
                     SoloChatVM soloChatVM = new SoloChatVM();
 
-                    soloChatVM.Chat.Id = chat.ChatId;
-                    soloChatVM.Chat.Img = chat.ChatImg;
-                    soloChatVM.Chat.Name = chat.ChatName;
-                    soloChatVM.Chat.Status = chat.ChatStatus;
+                    soloChatVM.Chat.Id = chat.Id;
+                    soloChatVM.Chat.Img = chat.Img;
+                    soloChatVM.Chat.Name = chat.Name;
+                    soloChatVM.Chat.Status = chat.Status;
 
                     soloChatUC.DataContext = soloChatVM;
 
-                    
+
 
                     soloChatUCs.Add(soloChatUC);
 
@@ -139,15 +110,11 @@ namespace Messenger.Logic.ProcessingLogic.ChatLogic
 
         public void SendMessage(ChatModel chatModel, string mess)
         {
-            if (mess == null)
+            IService service = new WCFService();
+            IChatMap chatMap = new Map();
+            if (!service.SendMessage(chatMap.ChatModelToChatDTO(chatModel), MyUser.User.UserToken, mess))
             {
                 MessageBox.Show("Error");
-                return;
-            }
-            using (ChatRepository repository = new ChatRepository())
-            {
-                repository.AddMessage(chatModel, mess);
-                repository.Save();
             }
 
         }

@@ -9,57 +9,53 @@ using Messenger.Data.DataModels;
 using Messenger.Data.ModelRepository.DeviceRepository;
 using Messenger.Data.ModelRepository.UserRepository;
 using Messenger.Logic.Models;
+using Messenger.Mapping;
+using Messenger.MessangerService;
+using Messenger.Services;
 
 namespace Messenger.Logic.ProcessingLogic.SignLogic
 {
     public class Login : ILogin
     {
+        IService service;
         public bool GetLogin(LoginModel model)
         {
-            if (model.Username == null)
+
+            ISignMap signMap = new Map();
+            service = new WCFService();
+            AccountDTO accountDTO = new AccountDTO();
+            
+            string host = System.Net.Dns.GetHostName();
+            DeviceDTO deviceDTO = new DeviceDTO
             {
-                Message();
-                return false;
-                
-            }
-            if(model.Password == null)
-            {
-                Message();
-                return false;
-                
-            }
-            using(UserRepository repository = new UserRepository())
-            {
-                User user = repository.GetUserByLoginPassword(model.Username, model.Password);
-                if (user != null)
-                {
-                    MyUser.SetNewUser(user);
-                    //return true;
-                }
-                else
-                {
-                    Message();
-                    return false;
-                }
-            }
-            Device dev = new Device
-            {
+                DeviceIp = Dns.GetHostEntry(host).AddressList[0].ToString(),
+                DeviceName = host,
                 DeviceTime = DateTime.Now.ToLongTimeString()
             };
-            string host = System.Net.Dns.GetHostName();
-            dev.DeviceName = host;
-            dev.DeviceIp = Dns.GetHostEntry(host).AddressList[0].ToString();
-            using (DeviceRepository repository = new DeviceRepository())
+            accountDTO = service.LoginService(signMap.LoginModelToLoginDTO(model), deviceDTO);
+            if (accountDTO != null)
             {
-                repository.AddDeviceToUser(dev, MyUser.User);
-                repository.Save();
+                //MessageBox.Show(result);
+                MyUser.SetNewUser(signMap.AccountDTOToUserModel(accountDTO));
                 return true;
             }
+            return false;
+
+            //Device dev = new Device
+            //{
+            //    DeviceTime = DateTime.Now.ToLongTimeString()
+            //};
+            //string host = System.Net.Dns.GetHostName();
+            //dev.DeviceName = host;
+            //dev.DeviceIp = Dns.GetHostEntry(host).AddressList[0].ToString();
+            //using (DeviceRepository repository = new DeviceRepository())
+            //{
+            //    repository.AddDeviceToUser(dev, MyUser.User);
+            //    repository.Save();
+            //    return true;
+            //}
            
         }
-        private void Message()
-        {
-            MessageBox.Show("Input username or login", "Error");
-        }
+       
     }
 }

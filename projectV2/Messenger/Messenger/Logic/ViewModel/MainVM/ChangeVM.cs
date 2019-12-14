@@ -8,6 +8,7 @@ using Messenger.Logic.Models;
 using System.Windows.Input;
 using System.Windows.Controls;
 using Messenger.Logic.ProcessingLogic.AccountLogic;
+using System.Windows;
 
 namespace Messenger.Logic.ViewModel.MainVM
 {
@@ -28,24 +29,32 @@ namespace Messenger.Logic.ViewModel.MainVM
         public ChangeVM()
         {
             _changeAccLogic = new ChangeAccLogic();
-            ChangeModel = new ChangeModel();
-            ChangeModel.Login = MyUser.User.UserLogin;
+            ChangeModel = new ChangeModel
+            {
+                Login = MyUser.User.UserLogin
+            };
             ChangeCommand = new DelegateCommand(Change);
         }
 
         private void Change(object obj)
         {
-            PasswordBox passwordBox = obj as PasswordBox;
-            if (passwordBox == null)
+            if (!(obj is PasswordBox passwordBox))
             {
                 return;
             }
             ChangeModel.OldPassword = passwordBox.Password;
             ChangeModel.NewPassword = passwordBox.Password;
             ChangeModel.RepeatPassword = passwordBox.Password;
-            
 
-            _changeAccLogic.ChangeAcc(ChangeModel);
+
+            if (_changeAccLogic.ChangeAccount(ChangeModel))
+            {
+                MessageBox.Show("You update data", "Complete");
+            }
+            else
+            {
+                MessageBox.Show("You input wrong data", "Error");
+            }
 
         }
 

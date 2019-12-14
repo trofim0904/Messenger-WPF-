@@ -56,13 +56,9 @@
             <Image    
                 gif:ImageBehavior.AnimatedSource="/Resources/GifForAbout.gif"
                 >
-                   <!--<Image.InputBindings>
-                        <MouseBinding Command="{Binding Path=GifCommand}" CommandParameter="{Binding ElementName=_gifImg}" MouseAction="LeftClick"/>
-                   </Image.InputBindings>-->
+              
             </Image>
         </Button>
-        <!--<Image Source="/Resources/cat2.jpg" 
-               x:Name="_gifImg"></Image>-->
-            
+
     </Grid>
 </Page>

@@ -22,10 +22,185 @@
             Application Entry Point.
             </summary>
         </member>
+        <member name="M:Messenger.Logic.ProcessingLogic.AccountLogic.InfoLogic.GetAccount">
+            <summary>
+            This method return account model using myuser
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Messenger.Logic.ViewModel.LoginVM.SignNavigation">
+            <summary>
+            Class for navigation on sign window
+            </summary>
+        </member>
+        <member name="M:Messenger.Logic.ViewModel.LoginVM.SignNavigation.#ctor(System.Windows.Window)">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:Messenger.Logic.ViewModel.LoginVM.SignNavigation.GetPage(System.String)">
+            <summary>
+            Get the user control by a name
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Messenger.Logic.ViewModel.LoginVM.SignNavigation.CloseWindow">
+            <summary>
+            Close window
+            </summary>
+        </member>
+        <member name="M:Messenger.Logic.ViewModel.LoginVM.SignVM.#ctor(System.Windows.Window)">
+            <summary>
+            ctor
+            </summary>
+            <param name="window"></param>
+        </member>
+        <member name="T:Messenger.Logic.ViewModel.MainVM.MainNavigation">
+            <summary>
+            Class for navigation for main window
+            </summary>
+        </member>
+        <member name="M:Messenger.Logic.ViewModel.MainVM.MainNavigation.#ctor">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:Messenger.Logic.ViewModel.MainVM.MainNavigation.GetPage(System.String)">
+            <summary>
+            Return page by a name
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Messenger.Logic.ViewModel.MainVM.DeviceVM.Devices">
+            <summary>
+            Collection of user controls
+            </summary>
+        </member>
+        <member name="M:Messenger.Logic.ViewModel.MainVM.DeviceVM.#ctor">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="T:Messenger.Logic.ViewModel.MainVM.UserInfoVM">
+            <summary>
+            Accounts info that user can see view model
+            </summary>
+        </member>
+        <member name="P:Messenger.Logic.ViewModel.MainVM.UserInfoVM.AccountModel">
+            <summary>
+            Model for view
+            </summary>
+        </member>
+        <member name="P:Messenger.Logic.ViewModel.MainVM.UserInfoVM.OpenOrCreateChatCommand">
+            <summary>
+            Command on btn 
+            </summary>
+        </member>
+        <member name="M:Messenger.Logic.ViewModel.MainVM.UserInfoVM.#ctor(Messenger.Logic.Models.AccountModel)">
+            <summary>
+            ctor
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="T:Messenger.Logic.ViewModel.MainVM.UserViewVM">
+            <summary>
+            View model for user view
+            </summary>
+        </member>
+        <member name="P:Messenger.Logic.ViewModel.MainVM.UserViewVM.AccountModel">
+            <summary>
+            account model that you can see on view
+            </summary>
+        </member>
+        <member name="P:Messenger.Logic.ViewModel.MainVM.UserViewVM.OpenUserInfoCommand">
+            <summary>
+            Command on btn
+            </summary>
+        </member>
+        <member name="M:Messenger.Logic.ViewModel.MainVM.UserViewVM.#ctor">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="T:Messenger.Services.WCFService">
+            <summary>
+            Class that work with server
+            </summary>
+        </member>
         <member name="T:Messenger.Data.DataModels.Chat">
             <summary>
             DataBase table chat
             </summary>
+        </member>
+        <member name="T:Messenger.Data.DataModels.User">
+            <summary>
+            User table in db
+            </summary>
+        </member>
+        <member name="T:Messenger.Data.DataModels.UserDevice">
+            <summary>
+            Isolation table
+            </summary>
+        </member>
+        <member name="T:Messenger.Data.DataModels.UserInChat">
+            <summary>
+            Isolation table
+            </summary>
+        </member>
+        <member name="M:Messenger.Data.GenericRepository`1.Delete(System.Int32)">
+            <summary>
+            This method delete item from dbset by id
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:Messenger.Data.ModelRepository.UserRepository.UserRepository">
+            <summary>
+            User logic (DB)
+            </summary>
+        </member>
+        <member name="M:Messenger.Data.ModelRepository.UserRepository.UserRepository.GetUserByLoginPassword(System.String,System.String)">
+            <summary>
+            Find user by param
+            </summary>
+            <param name="login"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Messenger.Data.ModelRepository.UserRepository.UserRepository.Update(Messenger.Data.DataModels.User)">
+            <summary>
+            ovveride method update to change user info
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Messenger.Data.ModelRepository.UserRepository.UserRepository.CheckLogin(System.String)">
+            <summary>
+            To check is that login in db
+            </summary>
+            <param name="login"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Messenger.Data.ModelRepository.UserRepository.UserRepository.CheckPhoneNumber(System.String)">
+            <summary>
+            To check is that phone number in db
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Messenger.Data.ModelRepository.UserRepository.UserRepository.GetUsersByString(System.String)">
+            <summary>
+            Get users by a teg
+            </summary>
+            <param name="teg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Messenger.Data.ModelRepository.UserRepository.UserRepository.GetItemListWithoutUser(Messenger.Data.DataModels.User)">
+            <summary>
+            Get all users without some user(Need for example for search list)
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
         </member>
         <member name="T:Messenger.Presentation.View.Admin.Pages.MessageToAll">
             <summary>
@@ -150,6 +325,11 @@
             </summary>
             <summary>
             AboutPage
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.Pages.AboutPage.#ctor">
+            <summary>
+            ctor
             </summary>
         </member>
         <member name="M:Messenger.Presentation.View.Main.Pages.AboutPage.InitializeComponent">
@@ -282,6 +462,11 @@
             UserViewUC
             </summary>
         </member>
+        <member name="M:Messenger.Presentation.View.Main.UserControls.UserViewUC.#ctor">
+            <summary>
+            ctor
+            </summary>
+        </member>
         <member name="M:Messenger.Presentation.View.Main.UserControls.UserViewUC.InitializeComponent">
             <summary>
             InitializeComponent
@@ -308,6 +493,11 @@
             UserInfoWindow
             </summary>
         </member>
+        <member name="M:Messenger.Presentation.View.Main.Windows.UserInfoWindow.#ctor">
+            <summary>
+            ctor
+            </summary>
+        </member>
         <member name="M:Messenger.Presentation.View.Main.Windows.UserInfoWindow.InitializeComponent">
             <summary>
             InitializeComponent
@@ -319,6 +509,11 @@
             </summary>
             <summary>
             WindowForChat
+            </summary>
+        </member>
+        <member name="M:Messenger.Presentation.View.Main.Windows.WindowForChat.#ctor">
+            <summary>
+            Window where you can send messages
             </summary>
         </member>
         <member name="M:Messenger.Presentation.View.Main.Windows.WindowForChat.InitializeComponent">
@@ -380,6 +575,36 @@
         <member name="P:Messenger.Properties.Resources.MessageIcon">
             <summary>
               Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
             </summary>
         </member>
     </members>

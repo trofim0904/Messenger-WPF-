@@ -41,7 +41,7 @@ namespace Messenger.Data.ModelRepository.ChatRepository
                 ChatType = "solo"
             };
             context.Chats.Add(chat);
-
+            Save();
             context.UsersInChats.Add(new UserInChat() { UserId = user.AccountId, ChatId = chat.ChatId });
             context.UsersInChats.Add(new UserInChat() { UserId = MyUser.User.UserId, ChatId = chat.ChatId });
 

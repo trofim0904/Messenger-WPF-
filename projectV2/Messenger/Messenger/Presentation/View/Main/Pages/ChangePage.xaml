@@ -4,10 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Messenger.Presentation.View.Main.Pages"
+      xmlns:vm ="clr-namespace:Messenger.Logic.ViewModel.MainVM"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ChangePage">
-
+    <Page.DataContext>
+        <vm:ChangeVM/>
+    </Page.DataContext>
     <Page.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="15"/>

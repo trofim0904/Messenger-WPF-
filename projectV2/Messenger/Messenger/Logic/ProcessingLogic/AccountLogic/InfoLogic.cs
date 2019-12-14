@@ -9,6 +9,10 @@ namespace Messenger.Logic.ProcessingLogic.AccountLogic
 {
     public class InfoLogic : IInfoLogic
     {
+        /// <summary>
+        /// This method return account model using myuser
+        /// </summary>
+        /// <returns></returns>
         public AccountModel GetAccount()
         {
             AccountModel accountModel = new AccountModel

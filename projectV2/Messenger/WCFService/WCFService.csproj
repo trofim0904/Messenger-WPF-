@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8E0F0EB-6464-4E6A-8A31-DE44E3A3CE2D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WCFService</RootNamespace>
+    <AssemblyName>WCFService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\DataModels\Chat.cs" />
+    <Compile Include="Data\DataModels\Device.cs" />
+    <Compile Include="Data\DataModels\Message.cs" />
+    <Compile Include="Data\DataModels\MessageInChat.cs" />
+    <Compile Include="Data\DataModels\User.cs" />
+    <Compile Include="Data\DataModels\UserDevice.cs" />
+    <Compile Include="Data\DataModels\UserInChat.cs" />
+    <Compile Include="Data\GenericRepository.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\MessangerContext.cs" />
+    <Compile Include="Data\ModelRepository\ChatRepository\ChatRepository.cs" />
+    <Compile Include="Data\ModelRepository\ChatRepository\IChatRepository.cs" />
+    <Compile Include="Data\ModelRepository\DeviceRepository\DeviceRepository.cs" />
+    <Compile Include="Data\ModelRepository\DeviceRepository\IDeviceRepository.cs" />
+    <Compile Include="Data\ModelRepository\UserRepository\IUserRepository.cs" />
+    <Compile Include="Data\ModelRepository\UserRepository\UserRepository.cs" />
+    <Compile Include="IMessangerService.cs" />
+    <Compile Include="Logic\MainLogic\AccountLogic.cs" />
+    <Compile Include="Logic\MainLogic\DeviceLogic.cs" />
+    <Compile Include="Logic\MainLogic\GroupChatLogic.cs" />
+    <Compile Include="Logic\MainLogic\IAccountLogic.cs" />
+    <Compile Include="Logic\MainLogic\IChatLogic.cs" />
+    <Compile Include="Logic\MainLogic\IDeviceLogic.cs" />
+    <Compile Include="Logic\MainLogic\IMessageLogic.cs" />
+    <Compile Include="Logic\MainLogic\MessageLogic.cs" />
+    <Compile Include="Logic\MainLogic\SoloChatLogic.cs" />
+    <Compile Include="Logic\Models\AccountModel.cs" />
+    <Compile Include="Logic\Models\ChangeModel.cs" />
+    <Compile Include="Logic\Models\LoginModel.cs" />
+    <Compile Include="Logic\Models\RegistrationModel.cs" />
+    <Compile Include="Logic\SignLogic\ILogin.cs" />
+    <Compile Include="Logic\SignLogic\IRegistration.cs" />
+    <Compile Include="Logic\SignLogic\SignLogic.cs" />
+    <Compile Include="Mapping\IMainMap.cs" />
+    <Compile Include="Mapping\IMapUser.cs" />
+    <Compile Include="Mapping\Map.cs" />
+    <Compile Include="MessangerService.cs" />
+    <Compile Include="Migrations\201912091347222_InitialCreate.cs" />
+    <Compile Include="Migrations\201912091347222_InitialCreate.designer.cs">
+      <DependentUpon>201912091347222_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912091358026_MigrationDB.cs" />
+    <Compile Include="Migrations\201912091358026_MigrationDB.designer.cs">
+      <DependentUpon>201912091358026_MigrationDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsersData\HashLogic.cs" />
+    <Compile Include="UsersData\UserList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MessangerDTO\MessangerDTO.csproj">
+      <Project>{08c24554-cd8b-406f-9f2e-cd755546cb7c}</Project>
+      <Name>MessangerDTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201912091347222_InitialCreate.resx">
+      <DependentUpon>201912091347222_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912091358026_MigrationDB.resx">
+      <DependentUpon>201912091358026_MigrationDB.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+</Project>

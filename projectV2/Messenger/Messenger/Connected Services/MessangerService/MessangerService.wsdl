@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MessangerService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IMessangerService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MessangerDTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMessangerService_CheckUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUser" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_CheckUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetRegistration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegistration" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetRegistration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetDevicesByToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDevicesByToken" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetDevicesByToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDevicesByTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_ChangeAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeAccount" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_ChangeAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetChats_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChats" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetChats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetOrCreateChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrCreateChat" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetOrCreateChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrCreateChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetGroupChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupChat" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetGroupChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessages" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_SendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_SendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetAccountsByTeg_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsByTeg" />
+  </wsdl:message>
+  <wsdl:message name="IMessangerService_GetAccountsByTeg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsByTegResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMessangerService">
+    <wsdl:operation name="CheckUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessangerService/CheckUser" message="tns:IMessangerService_CheckUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessangerService/CheckUserResponse" message="tns:IMessangerService_CheckUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessangerService/GetRegistration" message="tns:IMessangerService_GetRegistration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessangerService/GetRegistrationResponse" message="tns:IMessangerService_GetRegistration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDevicesByToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessangerService/GetDevicesByToken" message="tns:IMessangerService_GetDevicesByToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessangerService/GetDevicesByTokenResponse" message="tns:IMessangerService_GetDevicesByToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessangerService/ChangeAccount" message="tns:IMessangerService_ChangeAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessangerService/ChangeAccountResponse" message="tns:IMessangerService_ChangeAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessangerService/GetChats" message="tns:IMessangerService_GetChats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessangerService/GetChatsResponse" message="tns:IMessangerService_GetChats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrCreateChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessangerService/GetOrCreateChat" message="tns:IMessangerService_GetOrCreateChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessangerService/GetOrCreateChatResponse" message="tns:IMessangerService_GetOrCreateChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessangerService/GetGroupChat" message="tns:IMessangerService_GetGroupChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessangerService/GetGroupChatResponse" message="tns:IMessangerService_GetGroupChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessangerService/GetMessages" message="tns:IMessangerService_GetMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessangerService/GetMessagesResponse" message="tns:IMessangerService_GetMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessangerService/SendMessage" message="tns:IMessangerService_SendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessangerService/SendMessageResponse" message="tns:IMessangerService_SendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsByTeg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessangerService/GetAccountsByTeg" message="tns:IMessangerService_GetAccountsByTeg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessangerService/GetAccountsByTegResponse" message="tns:IMessangerService_GetAccountsByTeg_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IMessangerService" type="tns:IMessangerService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IMessangerService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="CheckUser">
+      <soap12:operation soapAction="http://tempuri.org/IMessangerService/CheckUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistration">
+      <soap12:operation soapAction="http://tempuri.org/IMessangerService/GetRegistration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDevicesByToken">
+      <soap12:operation soapAction="http://tempuri.org/IMessangerService/GetDevicesByToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAccount">
+      <soap12:operation soapAction="http://tempuri.org/IMessangerService/ChangeAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChats">
+      <soap12:operation soapAction="http://tempuri.org/IMessangerService/GetChats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrCreateChat">
+      <soap12:operation soapAction="http://tempuri.org/IMessangerService/GetOrCreateChat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupChat">
+      <soap12:operation soapAction="http://tempuri.org/IMessangerService/GetGroupChat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <soap12:operation soapAction="http://tempuri.org/IMessangerService/GetMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap12:operation soapAction="http://tempuri.org/IMessangerService/SendMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsByTeg">
+      <soap12:operation soapAction="http://tempuri.org/IMessangerService/GetAccountsByTeg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IMessangerService" type="tns:IMessangerService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckUser">
+      <soap:operation soapAction="http://tempuri.org/IMessangerService/CheckUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistration">
+      <soap:operation soapAction="http://tempuri.org/IMessangerService/GetRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDevicesByToken">
+      <soap:operation soapAction="http://tempuri.org/IMessangerService/GetDevicesByToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAccount">
+      <soap:operation soapAction="http://tempuri.org/IMessangerService/ChangeAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChats">
+      <soap:operation soapAction="http://tempuri.org/IMessangerService/GetChats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrCreateChat">
+      <soap:operation soapAction="http://tempuri.org/IMessangerService/GetOrCreateChat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupChat">
+      <soap:operation soapAction="http://tempuri.org/IMessangerService/GetGroupChat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <soap:operation soapAction="http://tempuri.org/IMessangerService/GetMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://tempuri.org/IMessangerService/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsByTeg">
+      <soap:operation soapAction="http://tempuri.org/IMessangerService/GetAccountsByTeg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MessangerService">
+    <wsdl:port name="NetTcpBinding_IMessangerService" binding="tns:NetTcpBinding_IMessangerService">
+      <soap12:address location="net.tcp://localhost:50000/WCFService.MessangerService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:50000/WCFService.MessangerService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>DESKTOP-DL9PHFJ\dimat</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IMessangerService" binding="tns:BasicHttpBinding_IMessangerService">
+      <soap:address location="http://localhost:8080/WCFService.MessangerService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

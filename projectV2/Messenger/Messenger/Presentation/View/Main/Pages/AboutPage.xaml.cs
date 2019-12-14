@@ -1,5 +1,4 @@
-﻿using Messenger.Logic.ViewModel.MainVM;
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -12,6 +11,9 @@ namespace Messenger.Presentation.View.Main.Pages
     /// </summary>
     public partial class AboutPage : Page
     {
+        /// <summary>
+        /// ctor
+        /// </summary>
         public AboutPage()
         {
             InitializeComponent();
@@ -27,6 +29,8 @@ namespace Messenger.Presentation.View.Main.Pages
             _gifImg.RenderTransformOrigin = new Point(0.5, 0.5);
            
             rotateTransform.BeginAnimation(RotateTransform.AngleProperty, doubleAnimation);
+
+           
         }
     }
 }

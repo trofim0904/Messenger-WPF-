@@ -1,0 +1,17 @@
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\MessangerHost.exe.config
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\MessangerHost.exe
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\MessangerHost.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\WCFService.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\MessangerDTO.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\EntityFramework.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\WCFService.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\WCFService.dll.config
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\MessangerDTO.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\EntityFramework.xml
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\obj\Debug\MessangerHost.csprojAssemblyReference.cache
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\obj\Debug\MessangerHost.csproj.CoreCompileInputs.cache
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\obj\Debug\MessangerHost.csproj.CopyComplete
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\obj\Debug\MessangerHost.exe
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\obj\Debug\MessangerHost.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\EntityFramework.SqlServer.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\EntityFramework.SqlServer.xml

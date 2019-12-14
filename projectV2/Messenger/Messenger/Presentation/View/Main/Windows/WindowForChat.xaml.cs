@@ -19,6 +19,9 @@ namespace Messenger.Presentation.View.Main.Windows
     /// </summary>
     public partial class WindowForChat : Window
     {
+        /// <summary>
+        /// Window where you can send messages
+        /// </summary>
         public WindowForChat()
         {
             InitializeComponent();

@@ -1,14 +1,10 @@
-﻿using Messenger.Presentation.View.Main.UserControls;
-using System;
+﻿using Messenger.Logic.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Messenger.Logic.ProcessingLogic.SearchLogic
 {
     public interface ISearchLogic
     {
-        IEnumerable<UserViewUC> GetUserViewUCs(string teg);
+        IEnumerable<AccountModel> GetUserViewUCs(string teg);
     }
 }

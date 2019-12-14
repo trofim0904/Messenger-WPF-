@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
+﻿using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Messenger.Presentation.View.Login.UserControls;
 using System.Threading;
 using System.Windows;
 
 namespace Messenger.Logic.ViewModel.LoginVM
 {
-    public class SignVM : BaseVM, INotifyPropertyChanged
+    public class SignVM : BaseVM
     {
-        private Window _signWindow;
+        //private Window _signWindow;
         ContentControl _content;
         private double _contentOpacity;
 
-        private UserControl _login;
-        private UserControl _registration;
+        //private UserControl _login;
+        //private UserControl _registration;
 
         public double ContentOpacity
         {
@@ -49,16 +43,22 @@ namespace Messenger.Logic.ViewModel.LoginVM
 
         public ICommand GoToLoginCommand { get; private set; }
         public ICommand GoToRegistrationCommand { get; private set; }
-        
+        private SignNavigation navigation;
 
+
+        /// <summary>
+        /// ctor
+        /// </summary>
+        /// <param name="window"></param>
         public SignVM(Window window)
         {
-            _signWindow = window;
-            _login = new LoginUC(_signWindow);
-            _registration = new RegistrationUC();
-            
+            navigation = new SignNavigation(window);
+            //_signWindow = window;
+            //_login = new LoginUC(_signWindow);
+            //_registration = new RegistrationUC();
 
-            Content = _login;
+
+            Content = navigation.GetPage("login");
             ContentOpacity = 1.0;
 
 
@@ -69,13 +69,13 @@ namespace Messenger.Logic.ViewModel.LoginVM
 
         private void GoToLogin(object obj)
         {
-            SlowOpacity(_login);
+            SlowOpacity(navigation.GetPage("login"));
         }
 
         private void GoToRegistration(object obj)
         {
-            SlowOpacity(_registration);
-            //Content = _registration;
+            SlowOpacity(navigation.GetPage("registration"));
+           
         }
 
         

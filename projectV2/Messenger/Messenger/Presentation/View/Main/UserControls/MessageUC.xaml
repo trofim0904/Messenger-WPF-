@@ -11,7 +11,10 @@
 
             <Image x:Name="_userImg" 
                    Source="{Binding Path=Message.Img}" 
-                   Width="50"/>
+                   MaxWidth="40"
+                   MinWidth="40"
+                   MaxHeight="40"
+                   MinHeight="40"/>
             <StackPanel Orientation="Vertical" Margin="1 0 0 0">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock x:Name="_userNameTb" 

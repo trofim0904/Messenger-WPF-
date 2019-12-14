@@ -1,0 +1,17 @@
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\bin\Debug\WCFService.dll.config
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\bin\Debug\WCFService.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\bin\Debug\WCFService.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\bin\Debug\EntityFramework.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\bin\Debug\EntityFramework.SqlServer.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\bin\Debug\MessangerDTO.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\bin\Debug\MessangerDTO.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\bin\Debug\EntityFramework.xml
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\bin\Debug\EntityFramework.SqlServer.xml
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.csprojAssemblyReference.cache
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.csproj.CoreCompileInputs.cache
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.csproj.CopyComplete
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.Migrations.InitialCreate.resources
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.csproj.GenerateResource.cache
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.Migrations.MigrationDB.resources

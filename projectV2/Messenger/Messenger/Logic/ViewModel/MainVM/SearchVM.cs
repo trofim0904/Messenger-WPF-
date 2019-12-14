@@ -1,7 +1,7 @@
 ﻿using Messenger.Logic.Models;
 using Messenger.Logic.ProcessingLogic.SearchLogic;
 using Messenger.Presentation.View.Main.UserControls;
-using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -34,13 +34,40 @@ namespace Messenger.Logic.ViewModel.MainVM
         public SearchVM()
         {
             _searchLogic = new SearchLogic();
-            Users = new ObservableCollection<UserViewUC>(_searchLogic.GetUserViewUCs(null));
+            Users = new ObservableCollection<UserViewUC>(GetUserViewUCList(_searchLogic.GetUserViewUCs(null)));
             SearchCommand = new DelegateCommand(SearchUsers);
         }
 
         private void SearchUsers(object obj)
         {
-            Users = new ObservableCollection<UserViewUC>(_searchLogic.GetUserViewUCs(TextSearch));
+            Users = new ObservableCollection<UserViewUC>(GetUserViewUCList(_searchLogic.GetUserViewUCs(TextSearch)));
+        }
+
+        private UserViewUC AccountToUC(AccountModel accountModel)
+        {
+            UserViewVM userVM = new UserViewVM();
+            UserViewUC viewUC = new UserViewUC();
+            userVM.AccountModel.AccountId = accountModel.AccountId;
+            userVM.AccountModel.AccountEmail = accountModel.AccountEmail;
+            userVM.AccountModel.AccountImg = accountModel.AccountImg;
+            userVM.AccountModel.AccountLogin = accountModel.AccountLogin;
+            userVM.AccountModel.AccountPhoneNumber = accountModel.AccountPhoneNumber;
+            viewUC.DataContext = userVM;
+
+            return viewUC;
+        }
+        private IEnumerable<UserViewUC> GetUserViewUCList(IEnumerable<AccountModel> accounts)
+        {
+            if (accounts != null)
+            {
+                List<UserViewUC> list = new List<UserViewUC>();
+                foreach (AccountModel account in accounts)
+                {
+                    list.Add(AccountToUC(account));
+                }
+                return list;
+            }
+            return null;
         }
     }
 }

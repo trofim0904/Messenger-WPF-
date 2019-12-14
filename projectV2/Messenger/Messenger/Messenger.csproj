@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EWSoftware.SHFB.2019.11.17\build\EWSoftware.SHFB.props" Condition="Exists('..\packages\EWSoftware.SHFB.2019.11.17\build\EWSoftware.SHFB.props')" />
   <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -53,6 +54,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -78,6 +81,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Logic\Models\UserModel.cs" />
+    <Compile Include="Mapping\IChatMap.cs" />
+    <Compile Include="Mapping\IUserMap.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\WCFService.cs" />
     <Page Include="Presentation\View\Admin\Pages\MessageToAll.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -172,6 +180,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\MessangerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Data\DataModels\Chat.cs" />
     <Compile Include="Data\DataModels\Device.cs" />
     <Compile Include="Data\DataModels\Message.cs" />
@@ -218,12 +231,14 @@
     <Compile Include="Logic\ViewModel\LoginVM\LoginVM.cs" />
     <Compile Include="Logic\ViewModel\LoginVM\NewPasswordVM.cs" />
     <Compile Include="Logic\ViewModel\LoginVM\RegistrationVM.cs" />
+    <Compile Include="Logic\ViewModel\LoginVM\SignNavigation.cs" />
     <Compile Include="Logic\ViewModel\LoginVM\SignVM.cs" />
     <Compile Include="Logic\ViewModel\MainVM\AccountVM.cs" />
     <Compile Include="Logic\ViewModel\MainVM\ChangeVM.cs" />
     <Compile Include="Logic\ViewModel\MainVM\ChattingVM.cs" />
     <Compile Include="Logic\ViewModel\MainVM\GroupChatPageVM.cs" />
     <Compile Include="Logic\ViewModel\MainVM\GroupChatVM.cs" />
+    <Compile Include="Logic\ViewModel\MainVM\MainNavigation.cs" />
     <Compile Include="Logic\ViewModel\MainVM\MessageVM.cs" />
     <Compile Include="Logic\ViewModel\MainVM\SearchVM.cs" />
     <Compile Include="Logic\ViewModel\MainVM\SoloChatPageVM.cs" />
@@ -232,6 +247,8 @@
     <Compile Include="Logic\ViewModel\MainVM\SoloChatVM.cs" />
     <Compile Include="Logic\ViewModel\MainVM\UserInfoVM.cs" />
     <Compile Include="Logic\ViewModel\MainVM\UserViewVM.cs" />
+    <Compile Include="Mapping\ISignMap.cs" />
+    <Compile Include="Mapping\Map.cs" />
     <Compile Include="Migrations\201911241527537_InitialCreate.cs" />
     <Compile Include="Migrations\201911241527537_InitialCreate.designer.cs">
       <DependentUpon>201911241527537_InitialCreate.cs</DependentUpon>
@@ -347,7 +364,33 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Connected Services\MessangerService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MessangerService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MessangerService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MessangerService\MessangerService.wsdl" />
+    <None Include="Connected Services\MessangerService\Messenger.MessangerService.AccountDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MessangerService\Messenger.MessangerService.ChatDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MessangerService\Messenger.MessangerService.DeviceDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MessangerService\Messenger.MessangerService.GroupChatDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MessangerService\Messenger.MessangerService.MessageDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -379,13 +422,36 @@
     <Resource Include="Resources\magnifying_glass_mouse.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\GifForAbout.gif" />
+    <Resource Include="Resources\GifForAbout.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MessageIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="messageicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MessangerService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MessangerService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MessangerService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MessangerService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MessangerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -394,6 +460,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\EWSoftware.SHFB.2019.11.17\build\EWSoftware.SHFB.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EWSoftware.SHFB.2019.11.17\build\EWSoftware.SHFB.props'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
 </Project>

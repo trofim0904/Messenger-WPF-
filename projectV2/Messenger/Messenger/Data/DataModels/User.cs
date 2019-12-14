@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Messenger.Data.DataModels
 {
+    /// <summary>
+    /// User table in db
+    /// </summary>
     public class User
     {
 

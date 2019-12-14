@@ -1,31 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using Messenger.Data.DataModels;
-using Messenger.Data.ModelRepository.DeviceRepository;
-using Messenger.Logic.ViewModel.MainVM;
+﻿using System.Collections.Generic;
+using Messenger.MessangerService;
 using Messenger.Presentation.View.Main.UserControls;
+using Messenger.Services;
 
 namespace Messenger.Logic.ProcessingLogic.DeviceLogic
 {
     public class DeviceLogic : IDeviceLogic
     {
-        public IEnumerable<DeviceUC> GetDeviceUCByUserId(int id)
+        public IEnumerable<DeviceUC> GetDeviceUC()
         {
             List<DeviceUC> deviceUCs = new List<DeviceUC>();
-            IEnumerable<Device> devices;
-             
-            using (DeviceRepository repository = new DeviceRepository())
-            {
-                devices = repository.GetUserDevices(id);
-            }
-            if (devices != null)
+            IEnumerable<DeviceDTO> deviceDTOs;
+            IService service = new WCFService();
+
+            deviceDTOs = service.GetDevicesByToken(MyUser.User.UserToken);
+           
+            if (deviceDTOs != null)
             {
                 int i = 1;
-                foreach (Device dev in devices)
+                foreach (DeviceDTO dev in deviceDTOs)
                 {
                     
                     DeviceUC deviceUC = new DeviceUC();
@@ -40,9 +33,6 @@ namespace Messenger.Logic.ProcessingLogic.DeviceLogic
             
             return deviceUCs;
         }
-        //public IEnumerable<Device> GetDevices(int id)
-        //{
-            
-        //}
+       
     }
 }

@@ -9,6 +9,6 @@ namespace Messenger.Logic.ProcessingLogic.AccountLogic
 {
     public interface IChangeAccLogic
     {
-        void ChangeAcc(ChangeModel model);
+        bool ChangeAccount(ChangeModel model);
     }
 }

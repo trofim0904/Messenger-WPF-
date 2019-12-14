@@ -1,28 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Windows.Controls;
 using System.Threading;
-using Messenger.Presentation.View.Main.Pages;
 using System.Windows.Input;
 using System.Windows;
 using Messenger.Presentation.View.Login.Windows;
+using System;
 
 namespace Messenger.Logic.ViewModel.MainVM
 {
     public class MainVM : BaseVM, INotifyPropertyChanged
     {
-        private Window _mainWindow;
-        private Page _account;
-        private Page _chat;
-        private Page _groupChat;
-        private Page _device;
-        private Page _search;
-        private Page _about;
-        private Page _change;
+        //private Window _mainWindow;
+        //private Page _account;
+        //private Page _chat;
+        //private Page _groupChat;
+        //private Page _device;
+        //private Page _search;
+        //private Page _about;
+        //private Page _change;
 
 
 
@@ -56,19 +52,23 @@ namespace Messenger.Logic.ViewModel.MainVM
         public ICommand SearchPageCommand { get; private set; }
         public ICommand DevicePageCommand { get; private set; }
         public ICommand ExitCommand { get; private set; }
+        public ICommand RefreshCommand { get; private set; }
+        private MainNavigation navigation;
 
-        public MainVM(Window window)
+        public MainVM(/*Window window*/)
         {
-            _account = new AccountPage();
-            _about = new AboutPage();
-            _chat = new ChatPage();
-            _groupChat = new GroupChatPage();
-            _search = new SearchPage();
-            _device = new DevicePage();
-            _change = new ChangePage();
-            _mainWindow = window;
+            //_mainWindow = window;
+            navigation = new MainNavigation();
+            //_account = new AccountPage();
+            //_about = new AboutPage();
+            //_chat = new ChatPage();
+            //_groupChat = new GroupChatPage();
+            //_search = new SearchPage();
+            //_device = new DevicePage();
+            //_change = new ChangePage();
+            //_mainWindow = window;
 
-            MainContent = _account;
+            MainContent = navigation.GetPage("account");
             MainContentOpacity = 1;
 
             AccountPageCommand = new DelegateCommand(AccountPageOpen);
@@ -79,49 +79,55 @@ namespace Messenger.Logic.ViewModel.MainVM
             DevicePageCommand = new DelegateCommand(DevicePageOpen);
             ChangePageCommand = new DelegateCommand(ChangePageOpen);
             ExitCommand = new DelegateCommand(Exit);
+            RefreshCommand = new DelegateCommand(Refresh);
+        }
+
+        private void Refresh(object obj)
+        {
+            navigation = new MainNavigation();
         }
 
         private void ChangePageOpen(object obj)
         {
-            SlowOpacity(_change);
+            SlowOpacity(navigation.GetPage("change"));
         }
 
         private void Exit(object obj)
         {
             Window window = new Sign();
             window.Show();
-            _mainWindow.Close();
+            navigation.CloseWindow();
         }
 
         private void DevicePageOpen(object obj)
         {
-            SlowOpacity(_device);
+            SlowOpacity(navigation.GetPage("device"));
         }
 
         private void SearchPageOpen(object obj)
         {
-            SlowOpacity(_search);
+            SlowOpacity(navigation.GetPage("search"));
         }
 
         private void GroupChatPageOpen(object obj)
         {
-            SlowOpacity(_groupChat);
+            SlowOpacity(navigation.GetPage("groupChat"));
         }
 
         private void ChatPageOpen(object obj)
         {
-            SlowOpacity(_chat);
+            SlowOpacity(navigation.GetPage("chat"));
         }
 
         private void AboutPageOpen(object obj)
         {
-            SlowOpacity(_about);
+            SlowOpacity(navigation.GetPage("about"));
         }
 
         private void AccountPageOpen(object obj)
         {
          
-            SlowOpacity(_account);
+            SlowOpacity(navigation.GetPage("account"));
         }
 
         

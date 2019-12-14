@@ -10,9 +10,15 @@ using System.Windows.Input;
 
 namespace Messenger.Logic.ViewModel.MainVM
 {
+    /// <summary>
+    /// View model for user view
+    /// </summary>
     public class UserViewVM : BaseVM
     {
         private AccountModel _accountModel;
+        /// <summary>
+        /// account model that you can see on view
+        /// </summary>
         public AccountModel AccountModel
         {
             get => _accountModel;
@@ -22,7 +28,13 @@ namespace Messenger.Logic.ViewModel.MainVM
                 OnPropertyChanged("AccountModel");
             }
         }
+        /// <summary>
+        /// Command on btn
+        /// </summary>
         public ICommand OpenUserInfoCommand { get; private set; }
+        /// <summary>
+        /// ctor
+        /// </summary>
         public UserViewVM()
         {
             AccountModel = new AccountModel();

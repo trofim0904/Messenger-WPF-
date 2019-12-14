@@ -48,8 +48,10 @@
                 Command="{Binding Path=OpenChatCommand}">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                 <Image x:Name="_imgMain" 
-                       Width="40" 
-                       Height="{Binding Width,ElementName=imgMain}" 
+                       MaxWidth="40"
+                       MinWidth="40"
+                       MaxHeight="40"
+                       MinHeight="40"
                        Margin="10 0 0 0" 
                        Source="{Binding Path=Chat.Img}"/>
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Left">

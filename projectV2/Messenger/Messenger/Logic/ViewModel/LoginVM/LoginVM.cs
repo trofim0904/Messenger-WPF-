@@ -43,7 +43,10 @@ namespace Messenger.Logic.ViewModel.LoginVM
             SignInCommand = new DelegateCommand(SignIn);
             ForgotPasswordCommand = new DelegateCommand(ForgotPassword);
             LoginModel = new LoginModel();
-            
+#if DEBUG
+            LoginModel.Username = "default";            
+#endif
+
         }
 
         private void ForgotPassword(object obj)
@@ -56,8 +59,7 @@ namespace Messenger.Logic.ViewModel.LoginVM
 
         private void SignIn(object obj)
         {
-            PasswordBox passwordBox = obj as PasswordBox;
-            if (passwordBox == null)
+            if (!(obj is PasswordBox passwordBox))
                 return;
             LoginModel.Password = passwordBox.Password;
 
@@ -79,6 +81,10 @@ namespace Messenger.Logic.ViewModel.LoginVM
                 }
                 _signWindow.Close();
                 
+            }
+            else
+            {
+                MessageBox.Show("Error");
             }
 
 

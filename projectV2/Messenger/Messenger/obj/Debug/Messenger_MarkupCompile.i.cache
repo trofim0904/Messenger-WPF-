@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-E:\5 semester\трпз\gitlab\projectV2\Messenger\Messenger\obj\Debug\
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\
 Messenger
 none
 false
 CODE_ANALYSIS;DEBUG;TRACE
-E:\5 semester\трпз\gitlab\projectV2\Messenger\Messenger\App.xaml
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\App.xaml
 232136455918
 
-101-380452794
-18-326306289
+111-1486364632
+20-690834979
 Presentation\View\Admin\Pages\MessageToAll.xaml;Presentation\View\Admin\Pages\Search.xaml;Presentation\View\Admin\Windows\AdminWindow.xaml;Presentation\View\Login\UserControls\EmailVerificationUC.xaml;Presentation\View\Login\UserControls\LoginUC.xaml;Presentation\View\Login\UserControls\NewPasswordUC.xaml;Presentation\View\Login\UserControls\RegistrationUC.xaml;Presentation\View\Login\Windows\NewPassword.xaml;Presentation\View\Login\Windows\Sign.xaml;Presentation\View\Main\Pages\AboutPage.xaml;Presentation\View\Main\Pages\AccountPage.xaml;Presentation\View\Main\Pages\ChangePage.xaml;Presentation\View\Main\Pages\ChatPage.xaml;Presentation\View\Main\Pages\DevicePage.xaml;Presentation\View\Main\Pages\GroupChatPage.xaml;Presentation\View\Main\Pages\SearchPage.xaml;Presentation\View\Main\UserControls\ChatLookUC.xaml;Presentation\View\Main\UserControls\DeviceUC.xaml;Presentation\View\Main\UserControls\MessageUC.xaml;Presentation\View\Main\UserControls\UserViewUC.xaml;Presentation\View\Main\Windows\Main.xaml;Presentation\View\Main\Windows\UserInfoWindow.xaml;Presentation\View\Main\Windows\WindowForChat.xaml;
 
 False

@@ -7,6 +7,7 @@ using System.ComponentModel;
 using Messenger.Presentation.View.Main.UserControls;
 using System.Collections.ObjectModel;
 using Messenger.Logic.ProcessingLogic.ChatLogic;
+using Messenger.Mapping;
 
 namespace Messenger.Logic.ViewModel.MainVM
 {
@@ -25,8 +26,9 @@ namespace Messenger.Logic.ViewModel.MainVM
         private ISoloChat _soloChat;
         public SoloChatPageVM()
         {
+            Map map = new Map();
             _soloChat = new ChatLogic();
-            Chats = new ObservableCollection<ChatLookUC>(_soloChat.GetSoloChatUC(MyUser.User));
+            Chats = new ObservableCollection<ChatLookUC>(_soloChat.GetSoloChatUC(MyUser.User.UserToken));
             //Chats.Add(new ChatOrUserLookUC());
         }
 

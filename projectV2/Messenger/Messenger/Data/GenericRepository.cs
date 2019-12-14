@@ -23,7 +23,10 @@ namespace Messenger.Data
         {
             dbSet.Add(item);
         }
-       
+       /// <summary>
+       /// This method delete item from dbset by id
+       /// </summary>
+       /// <param name="id"></param>
         public virtual void Delete(int id)
         {
             T item = dbSet.Find(id);

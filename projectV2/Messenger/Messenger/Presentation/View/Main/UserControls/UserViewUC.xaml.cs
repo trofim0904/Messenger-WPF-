@@ -20,6 +20,9 @@ namespace Messenger.Presentation.View.Main.UserControls
     /// </summary>
     public partial class UserViewUC : UserControl
     {
+        /// <summary>
+        /// ctor
+        /// </summary>
         public UserViewUC()
         {
             InitializeComponent();

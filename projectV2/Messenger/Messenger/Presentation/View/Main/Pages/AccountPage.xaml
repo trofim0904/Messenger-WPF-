@@ -4,9 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Messenger.Presentation.View.Main.Pages"
+      xmlns:vm ="clr-namespace:Messenger.Logic.ViewModel.MainVM"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AccountPage">
+    <Page.DataContext>
+        <vm:AccountVM/>
+    </Page.DataContext>
     <Page.Resources>
         <Style TargetType="Border" x:Key="grad_block">
             <Setter Property="BorderBrush" Value="{DynamicResource grad_brush}"/>
@@ -17,7 +21,13 @@
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image x:Name="_accountImg" 
                    Source="{Binding Path=AccountModel.AccountImg, UpdateSourceTrigger=PropertyChanged}" 
-                   Height="160" Margin="0 20 0 30"/>
+                   Height="160" 
+                   Margin="0 20 0 30"
+                   MaxWidth="160"
+                   MinWidth="160"
+                   MaxHeight="160"
+                   MinHeight="160"
+                   />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="email: " Margin="3" FontSize="15" FontWeight="Bold"/>
                 <Border Style="{StaticResource grad_block}">
