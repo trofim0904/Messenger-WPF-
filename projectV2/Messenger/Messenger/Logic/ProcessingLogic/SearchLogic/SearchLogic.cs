@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using Messenger.Data.DataModels;
-using Messenger.Data.ModelRepository.UserRepository;
 using Messenger.Logic.Models;
 using Messenger.Mapping;
 using Messenger.MessangerService;

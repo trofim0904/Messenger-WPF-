@@ -61,12 +61,12 @@ namespace WCFService.Logic.MainLogic
             {
                 chat = repository.FindSoloChatByUser(mapUser.AccountDTOToUser(accountDTO), token);
                 repository.Save();
-                //chatModel.Id = chat.ChatId;
-                //chatModel.Img = chat.ChatImg;
-                //chatModel.Name = chat.ChatName;
-                //chatModel.Status = chat.ChatStatus;
-
-                
+        
+            }
+            using (UserRepository repository = new UserRepository())
+            {
+                chat.ChatImg = repository.GetUserFromChat(chat, token).UserImg;
+                chat.ChatName = repository.GetUserFromChat(chat, token).UserLogin;
             }
             return mainMap.ChatToChatDTO(chat);
 

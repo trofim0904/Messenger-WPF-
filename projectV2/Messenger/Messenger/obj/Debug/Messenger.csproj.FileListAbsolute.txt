@@ -134,10 +134,6 @@ E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\D
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Presentation\View\Main\Windows\UserInfoWindow.baml
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Presentation\View\Main\Windows\WindowForChat.baml
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Messenger.g.resources
-E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Messenger.Migrations.InitialCreate.resources
-E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Messenger.Migrations.MigrationAddFields.resources
-E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Messenger.Migrations.MakeNullable.resources
-E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Messenger.Migrations.AddToChatTable.resources
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Messenger.Properties.Resources.resources
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Messenger.csproj.GenerateResource.cache
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Messenger.csproj.CoreCompileInputs.cache

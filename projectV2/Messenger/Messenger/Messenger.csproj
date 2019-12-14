@@ -185,22 +185,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Data\DataModels\Chat.cs" />
-    <Compile Include="Data\DataModels\Device.cs" />
-    <Compile Include="Data\DataModels\Message.cs" />
-    <Compile Include="Data\DataModels\MessageInChat.cs" />
-    <Compile Include="Data\DataModels\User.cs" />
-    <Compile Include="Data\DataModels\UserDevice.cs" />
-    <Compile Include="Data\DataModels\UserInChat.cs" />
-    <Compile Include="Data\IRepository.cs" />
-    <Compile Include="Data\GenericRepository.cs" />
-    <Compile Include="Data\MessangerContext.cs" />
-    <Compile Include="Data\ModelRepository\ChatRepository\ChatRepository.cs" />
-    <Compile Include="Data\ModelRepository\ChatRepository\IChatRepository.cs" />
-    <Compile Include="Data\ModelRepository\DeviceRepository\DeviceRepository.cs" />
-    <Compile Include="Data\ModelRepository\DeviceRepository\IDeviceRepository.cs" />
-    <Compile Include="Data\ModelRepository\UserRepository\IUserRepository.cs" />
-    <Compile Include="Data\ModelRepository\UserRepository\UserRepository.cs" />
     <Compile Include="Logic\Models\AccountModel.cs" />
     <Compile Include="Logic\Models\ChangeModel.cs" />
     <Compile Include="Logic\Models\ChatModel.cs" />
@@ -249,23 +233,6 @@
     <Compile Include="Logic\ViewModel\MainVM\UserViewVM.cs" />
     <Compile Include="Mapping\ISignMap.cs" />
     <Compile Include="Mapping\Map.cs" />
-    <Compile Include="Migrations\201911241527537_InitialCreate.cs" />
-    <Compile Include="Migrations\201911241527537_InitialCreate.designer.cs">
-      <DependentUpon>201911241527537_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911261755066_MigrationAddFields.cs" />
-    <Compile Include="Migrations\201911261755066_MigrationAddFields.designer.cs">
-      <DependentUpon>201911261755066_MigrationAddFields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911281439319_MakeNullable.cs" />
-    <Compile Include="Migrations\201911281439319_MakeNullable.designer.cs">
-      <DependentUpon>201911281439319_MakeNullable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911281613557_AddToChatTable.cs" />
-    <Compile Include="Migrations\201911281613557_AddToChatTable.designer.cs">
-      <DependentUpon>201911281613557_AddToChatTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyUser.cs" />
     <Compile Include="Presentation\View\Admin\Pages\MessageToAll.xaml.cs">
       <DependentUpon>MessageToAll.xaml</DependentUpon>
@@ -349,18 +316,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201911241527537_InitialCreate.resx">
-      <DependentUpon>201911241527537_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911261755066_MigrationAddFields.resx">
-      <DependentUpon>201911261755066_MigrationAddFields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911281439319_MakeNullable.resx">
-      <DependentUpon>201911281439319_MakeNullable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911281613557_AddToChatTable.resx">
-      <DependentUpon>201911281613557_AddToChatTable.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

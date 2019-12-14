@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
-using Messenger.Logic.Models;
+﻿using Messenger.Logic.Models;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
 using Messenger.Presentation.View.Main.UserControls;
 using Messenger.Logic.ProcessingLogic.ChatLogic;
-using Messenger.Data;
 
 namespace Messenger.Logic.ViewModel.MainVM
 {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Messenger.Data.DataModels;
-using Messenger.Logic.Models;
+﻿using Messenger.Logic.Models;
 using Messenger.MessangerService;
 
 namespace Messenger.Mapping
@@ -119,19 +113,6 @@ namespace Messenger.Mapping
             return registrationDTO;
         }
 
-        public User UserModelToUser(UserModel userModel)
-        {
-            User user = new User
-            {
-                UserEmail = userModel.UserEmail,
-                UserId = userModel.UserId,
-                UserImg = userModel.UserImg,
-                UserLogin = userModel.UserLogin,
-                UserPassword = userModel.UserPassword
-            };
-            user.UserPhoneNumber = user.UserPhoneNumber;
-            user.UserRole = user.UserRole;
-            return user;
-        }
+      
     }
 }
