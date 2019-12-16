@@ -77,11 +77,7 @@ E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\D
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\Debug\Messenger.pdb
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\Debug\Messenger.exe.CodeAnalysisLog.xml
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\Debug\Messenger.exe.lastcodeanalysissucceeded
-E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\Debug\EntityFramework.dll
-E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\Debug\EntityFramework.SqlServer.dll
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\Debug\WpfAnimatedGif.dll
-E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\Debug\EntityFramework.xml
-E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\Debug\EntityFramework.SqlServer.xml
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\Debug\WpfAnimatedGif.xml
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Presentation\View\Admin\Pages\MessageToAll.g.cs
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Presentation\View\Admin\Pages\Search.g.cs
@@ -142,3 +138,7 @@ E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\D
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Messenger.pdb
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\GeneratedInternalTypeHelper.g.cs
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\obj\Debug\Messenger.csprojAssemblyReference.cache
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\Debug\MessageSocketData.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\Debug\MessageSocketData.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\Debug\MessangerDTO.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\Messenger\bin\Debug\MessangerDTO.pdb

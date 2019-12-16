@@ -55,55 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\DataModels\Chat.cs" />
-    <Compile Include="Data\DataModels\Device.cs" />
-    <Compile Include="Data\DataModels\Message.cs" />
-    <Compile Include="Data\DataModels\MessageInChat.cs" />
-    <Compile Include="Data\DataModels\User.cs" />
-    <Compile Include="Data\DataModels\UserDevice.cs" />
-    <Compile Include="Data\DataModels\UserInChat.cs" />
-    <Compile Include="Data\GenericRepository.cs" />
-    <Compile Include="Data\IRepository.cs" />
-    <Compile Include="Data\MessangerContext.cs" />
-    <Compile Include="Data\ModelRepository\ChatRepository\ChatRepository.cs" />
-    <Compile Include="Data\ModelRepository\ChatRepository\IChatRepository.cs" />
-    <Compile Include="Data\ModelRepository\DeviceRepository\DeviceRepository.cs" />
-    <Compile Include="Data\ModelRepository\DeviceRepository\IDeviceRepository.cs" />
-    <Compile Include="Data\ModelRepository\UserRepository\IUserRepository.cs" />
-    <Compile Include="Data\ModelRepository\UserRepository\UserRepository.cs" />
     <Compile Include="IMessangerService.cs" />
-    <Compile Include="Logic\MainLogic\AccountLogic.cs" />
-    <Compile Include="Logic\MainLogic\DeviceLogic.cs" />
-    <Compile Include="Logic\MainLogic\GroupChatLogic.cs" />
-    <Compile Include="Logic\MainLogic\IAccountLogic.cs" />
-    <Compile Include="Logic\MainLogic\IChatLogic.cs" />
-    <Compile Include="Logic\MainLogic\IDeviceLogic.cs" />
-    <Compile Include="Logic\MainLogic\IMessageLogic.cs" />
-    <Compile Include="Logic\MainLogic\MessageLogic.cs" />
-    <Compile Include="Logic\MainLogic\SoloChatLogic.cs" />
-    <Compile Include="Logic\Models\AccountModel.cs" />
-    <Compile Include="Logic\Models\ChangeModel.cs" />
-    <Compile Include="Logic\Models\LoginModel.cs" />
-    <Compile Include="Logic\Models\RegistrationModel.cs" />
-    <Compile Include="Logic\SignLogic\ILogin.cs" />
-    <Compile Include="Logic\SignLogic\IRegistration.cs" />
-    <Compile Include="Logic\SignLogic\SignLogic.cs" />
-    <Compile Include="Mapping\IMainMap.cs" />
-    <Compile Include="Mapping\IMapUser.cs" />
-    <Compile Include="Mapping\Map.cs" />
     <Compile Include="MessangerService.cs" />
-    <Compile Include="Migrations\201912091347222_InitialCreate.cs" />
-    <Compile Include="Migrations\201912091347222_InitialCreate.designer.cs">
-      <DependentUpon>201912091347222_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912091358026_MigrationDB.cs" />
-    <Compile Include="Migrations\201912091358026_MigrationDB.designer.cs">
-      <DependentUpon>201912091358026_MigrationDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsersData\HashLogic.cs" />
-    <Compile Include="UsersData\UserList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -114,14 +68,10 @@
       <Project>{08c24554-cd8b-406f-9f2e-cd755546cb7c}</Project>
       <Name>MessangerDTO</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912091347222_InitialCreate.resx">
-      <DependentUpon>201912091347222_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912091358026_MigrationDB.resx">
-      <DependentUpon>201912091358026_MigrationDB.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\ServerLogic\ServerLogic.csproj">
+      <Project>{93dc3176-4da7-46ba-a83b-1f4a5bf3eaa7}</Project>
+      <Name>ServerLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

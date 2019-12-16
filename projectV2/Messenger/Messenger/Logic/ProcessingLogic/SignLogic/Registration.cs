@@ -8,7 +8,8 @@ namespace Messenger.Logic.ProcessingLogic.SignLogic
     {
         public bool GetRegistred(RegistrationModel model)
         {
-            IService service = new WCFService();
+            //IService service = new WCFService();
+            Socket service = new Socket();
             ISignMap map = new Map();
             return service.Registration(map.RegistrationModelToRegistrationDTO(model));
         }

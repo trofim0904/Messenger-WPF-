@@ -12,6 +12,6 @@ E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.csproj.CopyComplete
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.dll
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.pdb
-E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.Migrations.InitialCreate.resources
-E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.csproj.GenerateResource.cache
-E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\obj\Debug\WCFService.Migrations.MigrationDB.resources
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\bin\Debug\ServerLogic.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\bin\Debug\ServerLogic.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\WCFService\bin\Debug\ServerLogic.dll.config

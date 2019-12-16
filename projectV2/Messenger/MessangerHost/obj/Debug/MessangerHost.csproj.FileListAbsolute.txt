@@ -15,3 +15,6 @@ E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\o
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\obj\Debug\MessangerHost.pdb
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\EntityFramework.SqlServer.dll
 E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\EntityFramework.SqlServer.xml
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\ServerLogic.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\ServerLogic.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessangerHost\bin\Debug\ServerLogic.dll.config

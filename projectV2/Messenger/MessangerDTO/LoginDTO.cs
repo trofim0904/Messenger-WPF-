@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace MessangerDTO
 {
     [DataContract]
+    [Serializable]
     public class LoginDTO
     {
         [DataMember]

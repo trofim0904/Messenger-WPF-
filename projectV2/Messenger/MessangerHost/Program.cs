@@ -15,7 +15,7 @@ namespace MessangerHost
             {
                 host.Open();
 
-                Console.WriteLine("Host started....");
+                Console.WriteLine("<<WCF>> Host started....");
                 Console.ReadKey();
             }
             Console.ReadKey();

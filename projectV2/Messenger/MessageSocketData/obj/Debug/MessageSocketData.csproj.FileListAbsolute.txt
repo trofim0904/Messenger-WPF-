@@ -1,0 +1,9 @@
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessageSocketData\bin\Debug\MessageSocketData.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessageSocketData\bin\Debug\MessageSocketData.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessageSocketData\obj\Debug\MessageSocketData.csproj.CoreCompileInputs.cache
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessageSocketData\obj\Debug\MessageSocketData.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessageSocketData\obj\Debug\MessageSocketData.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessageSocketData\obj\Debug\MessageSocketData.csprojAssemblyReference.cache
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessageSocketData\bin\Debug\MessangerDTO.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessageSocketData\bin\Debug\MessangerDTO.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\MessageSocketData\obj\Debug\MessageSocketData.csproj.CopyComplete

@@ -9,12 +9,17 @@ namespace Messenger.Logic.ProcessingLogic.SignLogic
 {
     public class Login : ILogin
     {
-        IService service;
+        
         public bool GetLogin(LoginModel model)
         {
 
             ISignMap signMap = new Map();
-            service = new WCFService();
+
+
+            IService service = new WCFService();
+            //Socket service = new Socket();
+
+
             AccountDTO accountDTO = new AccountDTO();
             
             string host = System.Net.Dns.GetHostName();
@@ -27,25 +32,11 @@ namespace Messenger.Logic.ProcessingLogic.SignLogic
             accountDTO = service.LoginService(signMap.LoginModelToLoginDTO(model), deviceDTO);
             if (accountDTO != null)
             {
-                //MessageBox.Show(result);
                 MyUser.SetNewUser(signMap.AccountDTOToUserModel(accountDTO));
                 return true;
             }
             return false;
 
-            //Device dev = new Device
-            //{
-            //    DeviceTime = DateTime.Now.ToLongTimeString()
-            //};
-            //string host = System.Net.Dns.GetHostName();
-            //dev.DeviceName = host;
-            //dev.DeviceIp = Dns.GetHostEntry(host).AddressList[0].ToString();
-            //using (DeviceRepository repository = new DeviceRepository())
-            //{
-            //    repository.AddDeviceToUser(dev, MyUser.User);
-            //    repository.Save();
-            //    return true;
-            //}
            
         }
        

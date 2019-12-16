@@ -1,0 +1,14 @@
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\bin\Debug\ServerLogic.dll.config
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\bin\Debug\ServerLogic.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\bin\Debug\ServerLogic.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\bin\Debug\EntityFramework.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\bin\Debug\EntityFramework.SqlServer.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\bin\Debug\MessangerDTO.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\bin\Debug\EntityFramework.xml
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\bin\Debug\EntityFramework.SqlServer.xml
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\bin\Debug\MessangerDTO.pdb
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\obj\Debug\ServerLogic.csprojAssemblyReference.cache
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\obj\Debug\ServerLogic.csproj.CoreCompileInputs.cache
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\obj\Debug\ServerLogic.csproj.CopyComplete
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\obj\Debug\ServerLogic.dll
+E:\5 semester\трпз\gitlab\Messenger-WPF-\projectV2\Messenger\ServerLogic\obj\Debug\ServerLogic.pdb
