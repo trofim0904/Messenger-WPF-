@@ -68,6 +68,8 @@
     <Compile Include="Data\ModelRepository\ChatRepository\IChatRepository.cs" />
     <Compile Include="Data\ModelRepository\DeviceRepository\DeviceRepository.cs" />
     <Compile Include="Data\ModelRepository\DeviceRepository\IDeviceRepository.cs" />
+    <Compile Include="Data\ModelRepository\MessageRepository\IMessageRepository.cs" />
+    <Compile Include="Data\ModelRepository\MessageRepository\MessageRepository.cs" />
     <Compile Include="Data\ModelRepository\UserRepository\IUserRepository.cs" />
     <Compile Include="Data\ModelRepository\UserRepository\UserRepository.cs" />
     <Compile Include="Logic\MainLogic\AccountLogic.cs" />
